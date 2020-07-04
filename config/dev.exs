@@ -1,4 +1,4 @@
-use Mix.Config
+import Config
 
 # Configure your database
 config :phx_app_template, PhxAppTemplate.Repo,
@@ -64,9 +64,6 @@ config :phx_app_template, PhxAppTemplateWeb.Endpoint,
       ~r"lib/phx_app_template_web/templates/.*(eex)$"
     ]
   ]
-
-# Do not include metadata nor timestamps in development logs
-config :logger, :console, format: "[$level] $message\n"
 
 # Set a higher stacktrace during development. Avoid configuring such
 # in production as building large stacktraces may be expensive.

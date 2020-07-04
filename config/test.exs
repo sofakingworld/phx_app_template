@@ -1,4 +1,4 @@
-use Mix.Config
+import Config
 
 # Configure your database
 config :phx_app_template, PhxAppTemplate.Repo,
