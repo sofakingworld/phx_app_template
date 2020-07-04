@@ -1,4 +1,4 @@
-image: docker:dind
+image: docker:stable
 
 test_docker:
   image: nexus-1.dc-cr.b-pl.pro:8843/elixir:1.9.4.ubuntu1604
