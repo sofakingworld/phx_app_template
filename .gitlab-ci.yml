@@ -1,0 +1,22 @@
+image: docker:dind
+
+test_docker:
+  image: nexus-1.dc-cr.b-pl.pro:8843/elixir:1.9.4.ubuntu1604
+  services:
+    - postgres:latest
+  stage: build
+  when: always
+  variables:
+    GIT_SSL_NO_VERIFY: 1
+    POSTGRES_DB: test_test
+    POSTGRES_HOST: postgres
+    POSTGRES_USER: postgres
+    POSTGRES_PASSWORD: "postgres"
+    DATABASE_URL: "ecto://postgres:postgres@postgres:5432/test_test"
+    MIX_ENV: "test"
+  before_script:
+    - mix deps.get
+    - mix ecto.create
+    - mix ecto.migrate
+  script:
+    - mix test
