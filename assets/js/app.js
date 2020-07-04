@@ -3,15 +3,12 @@
 // its own CSS file.
 import css from "../css/app.css"
 
-// webpack automatically bundles all modules in your
-// entry points. Those entry points can be configured
-// in "webpack.config.js".
-//
-// Import dependencies
-//
 import "phoenix_html"
+import Vue from 'vue'
+import HelloWorld from './components/HelloWorld'
 
-// Import local files
-//
-// Local files can be imported directly using relative paths, for example:
-// import socket from "./socket"
+if (document.getElementById('hello_world')) {
+  new Vue({
+    render: h => h(HelloWorld),
+  }).$mount('#hello_world')
+}
